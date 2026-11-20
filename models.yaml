@@ -1,0 +1,58 @@
+# Every model the router can use, with its price in USD per 1M tokens.
+# Prices were read from the vendors' pricing pages on 2026-11-18. Prices change, so check them
+# again before you trust a cost total, then edit this one file. Nothing else in the repo holds a price.
+#
+#   OpenAI: https://developers.openai.com/api/docs/pricing.md
+#   Claude: https://platform.claude.com/docs/en/about-claude/pricing
+#
+# input         price per 1M input tokens that are not cached
+# cached_input  price per 1M input tokens read from the provider's cache
+# output        price per 1M output tokens
+# cache_write   price per 1M tokens written to a cache (Claude only; leave out if the provider has none)
+#
+# Prices here are for short prompts. Claude Haiku 5.5 costs more above 100,000 prompt tokens, and
+# gpt-5.4 costs more above 272,000. The helpdesk prompts are far below both.
+checked: "2026-11-18"
+
+models:
+  openai:gpt-5.4-nano:
+    input: 0.20
+    cached_input: 0.02
+    output: 1.25
+  openai:gpt-5.4-mini:
+    input: 0.75
+    cached_input: 0.075
+    output: 4.50
+  openai:gpt-5.4:
+    input: 2.50
+    cached_input: 0.25
+    output: 15.00
+  anthropic:claude-haiku-5-5:
+    input: 0.10
+    cached_input: 0.01
+    cache_write: 0.125
+    output: 0.50
+  anthropic:claude-sonnet-5-5:
+    input: 2.00
+    cached_input: 0.10
+    cache_write: 2.50
+    output: 10.00
+  anthropic:claude-opus-5-5:
+    input: 4.00
+    cached_input: 0.20
+    cache_write: 5.00
+    output: 20.00
+
+# Tier names used by the router. OpenAI is the main path.
+# Claude Sonnet 5.5 is priced close to gpt-5.4, not gpt-5.4-mini, so the Claude "mid" tier is a
+# step up in price from the OpenAI one.
+tiers:
+  small:
+    openai: openai:gpt-5.4-nano
+    anthropic: anthropic:claude-haiku-5-5
+  mid:
+    openai: openai:gpt-5.4-mini
+    anthropic: anthropic:claude-sonnet-5-5
+  large:
+    openai: openai:gpt-5.4
+    anthropic: anthropic:claude-opus-5-5

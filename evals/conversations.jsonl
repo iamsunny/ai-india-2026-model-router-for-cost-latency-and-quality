@@ -1,0 +1,10 @@
+{"id": "c01", "turns": ["leave-earned", "mix-carry"]}
+{"id": "c02", "turns": ["pay-net-oct", "pay-diff"]}
+{"id": "c03", "turns": ["hol-oct", "pol-carry"]}
+{"id": "c04", "turns": ["leave-sick", "pol-notice", "ticket-explicit"]}
+{"id": "c05", "turns": ["p8-03", "r-leave-left"]}
+{"id": "c06", "turns": ["pay-tax-oct", "a-tax-up"]}
+{"id": "c07", "turns": ["pol-wfh", "a-floating"]}
+{"id": "c08", "turns": ["other-person", "s-underpaid"]}
+{"id": "c09", "turns": ["p8-07", "r-pf-pct"]}
+{"id": "c10", "turns": ["pol-unknown", "a-notice"]}

@@ -1,0 +1,10 @@
+# Supported version ranges. Python 3.12 or newer.
+langchain>=1.4,<2
+langchain-core>=1.7,<2
+langchain-openai>=1.7
+langchain-text-splitters>=1.1
+python-dotenv>=1.0
+pydantic>=2.7
+pyyaml>=6
+numpy>=2
+pytest>=8

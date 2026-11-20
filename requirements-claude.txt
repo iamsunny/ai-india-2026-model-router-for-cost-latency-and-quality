@@ -1,0 +1,3 @@
+# Only needed if you want to try the Claude API models in models.yaml (Parts 4 and 5 have optional boxes for them).
+-r requirements.txt
+langchain-anthropic>=1.0
